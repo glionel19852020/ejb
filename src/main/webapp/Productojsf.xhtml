@@ -7,13 +7,14 @@
     <h:head>
         <title>Listar producto</title>
     </h:head>
-    <h:body>
+     <h:body>
+              
         <p:dataTable value="#{productobean.producto}" var="p">
             <p:column headerText="CODIGO">
                 <h:outputText value="#{p.id}"/>
              </p:column>
             
-              <p:column headerText="NOMBRES">
+              <p:column headerText="NOMBRE">
                   <h:outputText value="#{p.nombre}"/>
              </p:column>
             
@@ -21,19 +22,22 @@
                   <h:outputText value="#{p.descripcion}"/>
              </p:column>
             
-              <p:column headerText="PAIS">
-                  <h:outputText value="#{p.pais}"/>
+              <p:column headerText="FECHA_PROD">
+                  <h:outputText value="#{p.fechaProduccion}"/>
              </p:column>
             
-             <p:column headerText="FECHA_PRODUCCION">
-                 <h:outputText value="#{p.fechaProduccion}"/>
+             <p:column headerText="PAIS">
+                 <h:outputText value="#{p.pais}"/>
              </p:column>
-                                
-        </p:dataTable>
-		
+            
+  
+	      </p:dataTable>      
+        
         
         
         
     </h:body>
+   
+    
 </html>
 

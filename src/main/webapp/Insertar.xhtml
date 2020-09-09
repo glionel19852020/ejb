@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Insertar producto</title>
+    </h:head>
+    <h:body>
+       <h:form id="producto">
+   <p:growl id="growl" sticky="true" />
+   <p:dataTable id="productoList" var="producto" value="#{productobean.newproduct}">
+      <p:column headerText="Id">
+          <p:inputText value="#{productobean.newproduct.id}" converter="#{BigDecimal}" required="false" disabled="true"/>
+      </p:column>
+ 
+      <p:column headerText="Nombre">
+          <p:inputText id="nombre" value="#{productobean.newproduct.nombre}"/>
+      </p:column>
+ 
+      <p:column headerText="Descripción">
+          <p:inputText id="descripcion" value="#{productobean.newproduct.descripcion}"/>
+       </p:column>
+ 
+       <p:column headerText="Fecha_Producción">
+           <p:inputText id="fecha_prod" value="#{productobean.newproduct.fechaProduccion}"/>
+       </p:column>
+ 
+       <p:column headerText="Pais">
+           <p:inputText id="pais" value="#{productobean.newproduct.pais}"/>
+       </p:column>
+             
+           
+        <p:column>
+           <p:commandButton update="productoList" value="Insertar" icon="pi pi-save"
+                            action="#{productobean.crear()}"
+                        styleClass="ui-priority-primary">
+           </p:commandButton>
+        </p:column>
+     </p:dataTable>
+     <br/>
+     
+</h:form>
+    </h:body>
+</html>
+
